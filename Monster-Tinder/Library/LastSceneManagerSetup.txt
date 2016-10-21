@@ -1,3 +1,4 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:9b5028d178071de024b7b65f54f5b235af1396469da71913031919989f108171
-size 72
+sceneSetups:
+- path: Assets/Main Menu.unity
+  isLoaded: 1
+  isActive: 1

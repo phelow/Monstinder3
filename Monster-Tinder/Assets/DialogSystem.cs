@@ -146,10 +146,18 @@ public class DialogSystem : MonoBehaviour {
     [SerializeField]
     private TextAsset m_levelText;
 
+    [SerializeField]
+    private AudioSource m_source;
+
+    [SerializeField]
+    private AudioClip m_clip;
+
+    private static DialogSystem ms_instance;
     private static string m_playerChoice;
 
     public void LoadScenes()
     {
+        ms_instance = this;
         m_dialogExchanges = new List<DialogLevel>();
         LoadLevelOne();
 
@@ -157,6 +165,7 @@ public class DialogSystem : MonoBehaviour {
 
     public static void SetChoice(string choice)
     {
+        ms_instance.m_source.PlayOneShot(ms_instance.m_clip);
         m_playerChoice = choice;
     }
 
